@@ -1,3 +1,7 @@
+/**
+ *  数据库表映射文件
+ */
+
 module.exports = function (sequelize, DataTypes) {
     return sequelize.define('users',
         {

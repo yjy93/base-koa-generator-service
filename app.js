@@ -27,10 +27,10 @@ app.use(views(__dirname + '/views', {
 
 // logger 日志记录
 app.use(async (ctx, next) => {
-  const start = new Date()
+  // const start = new Date()
   await next()
-  const ms = new Date() - start
-  console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
+  // const ms = new Date() - start
+  // console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
 });
 
 // routes 路由分类
@@ -38,8 +38,8 @@ app.use(index.routes(), index.allowedMethods());
 app.use(users.routes(), users.allowedMethods());
 
 // error-handling 错误捕获
-app.on('error', (err, ctx) => {
-  console.error('server error', err, ctx)
-});
+// app.on('error', (err, ctx) => {
+//   // console.error('server error', err, ctx)
+// });
 
 module.exports = app;

@@ -4,17 +4,16 @@ const db = require('../config/db')
 const Sequelize = db.sequelize
 
 //引入数据表模型
-const user = Sequelize.import('../schema/user');
+const userSchema = Sequelize.import('../schema/userSchema');
 
 //自动创建表
-user.sync({force:true});
+userSchema.sync({force:true});
 
 //  操作数据库的类
 class userModel{
     // 基于模型创建数据
     static async createUser(data) {
-        console.log('userModel.createUser ---->>>>>',data);
-        return await user.create({
+        return await userSchema.create({
             name: data.name,
             age: data.age
         })

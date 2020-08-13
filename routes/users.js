@@ -1,8 +1,10 @@
 const router = require('koa-router')()
 
+// 路由嵌套, 二级路由前缀
 router.prefix('/users')
+// 引入 userController 业务逻辑层
+const userController = require('../controller/userController')
 
-const userController = require('../controller/user') //调用业务controller
 router.get('/create', userController.create)
 
 module.exports = router

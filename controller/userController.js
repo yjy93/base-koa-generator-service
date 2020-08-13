@@ -1,10 +1,9 @@
-const userModel = require('../model/user')
+const userModel = require('../model/userModel')
 
 /**
  * controller 逻辑处理层
  */
 
-// userController
 class userController {
     //  添加用户
     static async create(ctx) {
