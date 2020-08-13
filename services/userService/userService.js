@@ -5,7 +5,7 @@ const userModel = require('../../model/userModel')
 
 class userService {
     static async createUser(req) {
-        await userModel.createUser(req); //添加数据
+       await userModel.createUser(req); //添加数据
     }
 }
 
