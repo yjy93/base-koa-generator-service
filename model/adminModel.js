@@ -3,6 +3,7 @@ let {sequelize} = require('../config/db') // 引入 sequelize 实例
 
 //  Model 实体
 class adminModel extends Model {
+    
     // 基于模型创建数据
     static async createUser(data) {
         adminModel.create({
