@@ -7,7 +7,7 @@ const Sequelize = db.sequelize
 const userSchema = Sequelize.import('../schema/userSchema');
 
 //自动创建表
-userSchema.sync({force:true});
+userSchema.sync({force:false});
 
 //  操作数据库的类
 class userModel{
