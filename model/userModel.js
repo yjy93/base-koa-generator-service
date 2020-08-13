@@ -1,16 +1,11 @@
-//引入db mysql配置
-const db = require('../config/db')
-//引入 sequelize 对象
-const Sequelize = db.sequelize
+let {sequelize} = require('../config/db')
+const {Model,DataTypes} = require('sequelize')
+const {userSchema} = require('../schema/userSchema')
 
-//引入数据表模型
-const userSchema = Sequelize.import('../schema/userSchema');
 
-//自动创建表
-userSchema.sync({force:false});
+//  操作数据库的类 Model
+class userModel extends Model {
 
-//  操作数据库的类
-class userModel{
     // 基于模型创建数据
     static async createUser(data) {
         return await userSchema.create({
@@ -19,5 +14,4 @@ class userModel{
         })
     }
 }
-
 module.exports = userModel

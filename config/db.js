@@ -2,8 +2,8 @@
  * mysql数据库 的配置文件
  */
 
-var Sequelize = require("sequelize")
-var sequelize = new Sequelize('node_study', 'root', 'root', { // 数据库名    用户名   密码
+let {Sequelize, Model, DataTypes} = require("sequelize")
+let sequelize = new Sequelize('node_study', 'root', 'root', { // 数据库名    用户名   密码
     host: 'localhost',
     port: '3306',
     dialect: 'mysql',
