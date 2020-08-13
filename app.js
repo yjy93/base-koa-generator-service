@@ -9,6 +9,7 @@ const logger = require('koa-logger')
 // 引入路由
 const index = require('./routes/index')
 const users = require('./routes/users')
+const admin = require('./routes/admin')
 
 // error handler
 onerror(app)
@@ -36,6 +37,7 @@ app.use(async (ctx, next) => {
 // routes 路由分类
 app.use(index.routes(), index.allowedMethods());
 app.use(users.routes(), users.allowedMethods());
+app.use(admin.routes(), admin.allowedMethods());
 
 // error-handling 错误捕获
 // app.on('error', (err, ctx) => {
