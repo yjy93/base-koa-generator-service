@@ -1,17 +1,13 @@
-const {Model,DataTypes} = require('sequelize')
-let {sequelize} = require('../config/db')
+const {Model, DataTypes} = require('sequelize') // 引入 Model, 引入 DataTypes 类型约束
+let {sequelize} = require('../config/db') // 引入 sequelize 实例
 
-//  操作数据库的类 Model
+//  Model 实体
 class adminModel extends Model {
     // 基于模型创建数据
     static async createUser(data) {
-        // return await userSchema.create({
-        //     name: data.name,
-        //     age: data.age
-        // })
         adminModel.create({
             name: data.name,
-            age:data.age
+            age: data.age
         })
     }
 }
@@ -33,4 +29,4 @@ adminModel.init({
     sequelize, // 关联 sequelize 实例
     tableName: 'admins',
 })
-adminModel.sync({force:false})
+adminModel.sync({force: false})

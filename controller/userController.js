@@ -8,7 +8,8 @@ class userController {
     //  添加用户
     static async create(ctx) {
         let req = ctx.query;  //获取Get请求
-        await userService.createUser(req)
+         await userService.createUser(req)
+
     }
 }
 
